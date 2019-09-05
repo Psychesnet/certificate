@@ -19,3 +19,9 @@ openssl ca -selfsign -config root-ca.conf -in rootca.csr -out rootca.crt -extens
 
 # create sub certificate from rootca
 openssl ca -config root-ca.conf -in ../subca/subca.csr -out ../subca/subca.crt -extensions sub_ca_ext
+
+# show certificate
+openssl x509 -noout -text -in rootca.crt
+
+# show private key
+openssl rsa -noout -text -in rootca_pri.key
